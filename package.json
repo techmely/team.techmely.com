@@ -27,6 +27,7 @@
   "dependencies": {
     "undici": "5.22.1",
     "swup": "3.1.1",
+    "@swup/gtm-plugin": "1.0.2",
     "gsap": "3.12.2",
     "@techmely/utils": "1.5.21"
   },
