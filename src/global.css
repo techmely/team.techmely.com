@@ -4,59 +4,242 @@
  */
 @layer reset, base, tokens, recipes, utilities;
 
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
 
-:root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
-  --qwik-dark-text: #ffffff;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--global-color-border, currentColor);
+  }
 
-html {
-  line-height: 1;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+  html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -moz-tab-size: 2; /* 3 */
+    tab-size: 2; /* 3 */
+    /* See https://github.com/system-fonts/modern-font-stacks#neo-grotesque */
+    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* 4 */
+    --h1-text-axis: 100;
+    --h1-font-stretch: 100;
+    --h2-text-axis: 100;
+    --h2-font-stretch: 100;
+    --h3-text-axis: 100;
+    --h3-font-stretch: 100;
+    --h4-text-axis: 100;
+    --h4-font-stretch: 100;
+    --h5-text-axis: 100;
+    --h5-font-stretch: 100;
+    --h6-text-axis: 100;
+    --h6-font-stretch: 100;
+    /* --font-fallback: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      'Noto Color Emoji'; */
+    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    font-family: var(--global-font-body, var(--font-fallback));
+  }
 
-body {
-  padding: 0;
-  margin: 0;
-  line-height: inherit;
-}
+  /*
+Remove the default font size and weight for headings.
+*/
 
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
-html {
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+  h1 {
+    font-variation-settings: 'wdth' var(--h1-font-stretch) 'GRAD' var(--h1-text-axis);
+  }
+  h2 {
+    font-variation-settings: 'wdth' var(--h2-font-stretch) 'GRAD' var(--h2-text-axis);
+  }
+  h3 {
+    font-variation-settings: 'wdth' var(--h3-font-stretch) 'GRAD' var(--h3-text-axis);
+  }
+  h4 {
+    font-variation-settings: 'wdth' var(--h4-font-stretch) 'GRAD' var(--h4-text-axis);
+  }
+  h5 {
+    font-variation-settings: 'wdth' var(--h5-font-stretch) 'GRAD' var(--h5-text-axis);
+  }
+  h6 {
+    font-variation-settings: 'wdth' var(--h6-font-stretch) 'GRAD' var(--h6-text-axis);
+  }
+  .body1 {
+    font-variation-settings: 'wdth' var(--body1-font-stretch) 'GRAD' var(--body1-text-axis);
+  }
+  .body2 {
+    font-variation-settings: 'wdth' var(--body2-font-stretch) 'GRAD' var(--body2-text-axis);
+  }
 
-body {
-  padding: 0;
-  line-height: inherit;
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+
+  body {
+    height: 100%;
+    line-height: inherit;
+  }
+
+  img {
+    border-style: none;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
+    vertical-align: middle;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    font-size: 1em;
+  }
+
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 1;
+    color: var(--global-color-placeholder, #9ca3af);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  summary {
+    display: list-item;
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  dialog {
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  abbr:where([title]) {
+    text-decoration: underline dotted;
+  }
+
+  b,
+  strong {
+    font-weight: bolder;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-size: 1em;
+    --font-mono-fallback: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New';
+    font-family: var(--global-font-mono, var(--font-fallback));
+  }
+
+  [type='search'] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+  }
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  :-moz-focusring {
+    outline: auto;
+  }
 }

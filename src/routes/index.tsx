@@ -1,19 +1,17 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
 
-import Counter from "~/components/starter/counter/counter";
-import Hero from "~/components/starter/hero/hero";
-import Infobox from "~/components/starter/infobox/infobox";
-import Starter from "~/components/starter/next-steps/next-steps";
+import Counter from '~/components/starter/counter/counter'
+import Hero from '~/components/starter/hero/hero'
+import Infobox from '~/components/starter/infobox/infobox'
+import Starter from '~/components/starter/next-steps/next-steps'
+import Pandacss from './pandacss'
 
 export default component$(() => {
   return (
     <>
       <Hero />
       <Starter />
-
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
 
       <div class="container container-center container-spacing-xl">
         <h3>
@@ -22,7 +20,7 @@ export default component$(() => {
         </h3>
         <Counter />
       </div>
-
+      <Pandacss />
       <div class="container container-flex">
         <Infobox>
           <div q:slot="title" class="icon icon-cli">
@@ -58,7 +56,7 @@ export default component$(() => {
               Example Apps
             </div>
             <p>
-              Have a look at the <a href="/demo/flower">Flower App</a> or the{" "}
+              Have a look at the <a href="/demo/flower">Flower App</a> or the{' '}
               <a href="/demo/todolist">Todo App</a>.
             </p>
           </Infobox>
@@ -70,26 +68,26 @@ export default component$(() => {
             <ul>
               <li>
                 <span>Questions or just want to say hi? </span>
-                <a href="https://qwik.builder.io/chat" target="_blank">
+                <a href="https://qwik.builder.io/chat" target="_blank" rel="noreferrer">
                   Chat on discord!
                 </a>
               </li>
               <li>
                 <span>Follow </span>
-                <a href="https://twitter.com/QwikDev" target="_blank">
+                <a href="https://twitter.com/QwikDev" target="_blank" rel="noreferrer">
                   @QwikDev
                 </a>
                 <span> on Twitter</span>
               </li>
               <li>
                 <span>Open issues and contribute on </span>
-                <a href="https://github.com/BuilderIO/qwik" target="_blank">
+                <a href="https://github.com/BuilderIO/qwik" target="_blank" rel="noreferrer">
                   GitHub
                 </a>
               </li>
               <li>
                 <span>Watch </span>
-                <a href="https://qwik.builder.io/media/" target="_blank">
+                <a href="https://qwik.builder.io/media/" target="_blank" rel="noreferrer">
                   Presentations, Podcasts, Videos, etc.
                 </a>
               </li>
@@ -98,15 +96,15 @@ export default component$(() => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: 'Welcome to Qwik',
   meta: [
     {
-      name: "description",
-      content: "Qwik site description",
+      name: 'description',
+      content: 'Qwik site description',
     },
   ],
-};
+}
