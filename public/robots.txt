@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+
+# *
+User-agent: *
+Disallow: /*utm_source=
+Disallow: /*fbclid=
+Disallow: /*?mode=
+
+# Host
+Host: https://www.team.techmely.com
