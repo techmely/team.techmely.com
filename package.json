@@ -22,14 +22,15 @@
     "test.e2e": "playwright test",
     "test.unit": "vitest components",
     "test.unit.ui": "vitest --ui components",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "migration-latest": "ts-node scripts/migrate-db.ts dev latest",
+    "migration-down": "ts-node scripts/migrate-db.ts dev down"
   },
   "dependencies": {
-    "undici": "5.22.1",
-    "swup": "3.1.1",
     "@swup/gtm-plugin": "1.0.2",
+    "@techmely/utils": "1.5.21",
     "gsap": "3.12.2",
-    "@techmely/utils": "1.5.21"
+    "swup": "3.1.1"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.8.0",
@@ -39,17 +40,21 @@
     "@pandacss/dev": "^0.7.0",
     "@playwright/test": "^1.36.1",
     "@types/node": "^20.4.2",
-    "vite-plugin-inspect": "0.7.33",
-    "vite-plugin-lightningcss": "0.0.5",
     "@vitest/ui": "^0.33.0",
     "autoprefixer": "^10.4.14",
+    "dotenv": "16.3.1",
     "eslint-plugin-qwik": "^1.2.6",
+    "kysely": "0.26.1",
+    "kysely-planetscale": "1.3.0",
     "postcss": "^8.4.23",
     "postcss-preset-env": "^9.0.0",
     "rome": "12.1.3",
+    "ts-node": "10.9.1",
     "typescript": "5.1.6",
     "vercel": "^31.0.4",
     "vite": "4.4.4",
+    "vite-plugin-inspect": "0.7.33",
+    "vite-plugin-lightningcss": "0.0.5",
     "vite-tsconfig-paths": "4.2.0",
     "vitest": "^0.33.0"
   }

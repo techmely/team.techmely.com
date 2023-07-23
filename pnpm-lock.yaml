@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@swup/gtm-plugin':
+    specifier: 1.0.2
+    version: 1.0.2
   '@techmely/utils':
     specifier: 1.5.21
     version: 1.5.21
@@ -14,9 +17,6 @@ dependencies:
   swup:
     specifier: 3.1.1
     version: 3.1.1
-  undici:
-    specifier: 5.22.1
-    version: 5.22.1
 
 devDependencies:
   '@builder.io/partytown':
@@ -33,7 +33,7 @@ devDependencies:
     version: 0.0.7(@types/node@20.4.2)
   '@pandacss/dev':
     specifier: ^0.7.0
-    version: 0.7.0(@internationalized/date@3.3.0)(@types/node@20.4.2)(@types/react-dom@18.2.7)(@types/react@18.2.15)(astro@2.8.5)(typescript@5.1.6)
+    version: 0.7.0(@internationalized/date@3.3.0)(@types/node@20.4.2)(@types/react-dom@18.2.7)(@types/react@18.2.15)(astro@2.8.5)(ts-node@10.9.1)(typescript@5.1.6)
   '@playwright/test':
     specifier: ^1.36.1
     version: 1.36.1
@@ -46,9 +46,18 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.26)
+  dotenv:
+    specifier: 16.3.1
+    version: 16.3.1
   eslint-plugin-qwik:
     specifier: ^1.2.6
     version: 1.2.6(eslint@8.45.0)
+  kysely:
+    specifier: 0.26.1
+    version: 0.26.1
+  kysely-planetscale:
+    specifier: 1.3.0
+    version: 1.3.0(@planetscale/database@1.8.0)(kysely@0.26.1)
   postcss:
     specifier: ^8.4.23
     version: 8.4.26
@@ -58,12 +67,15 @@ devDependencies:
   rome:
     specifier: 12.1.3
     version: 12.1.3
+  ts-node:
+    specifier: 10.9.1
+    version: 10.9.1(@types/node@20.4.2)(typescript@5.1.6)
   typescript:
     specifier: 5.1.6
     version: 5.1.6
   vercel:
     specifier: ^31.0.4
-    version: 31.0.4(@types/node@20.4.2)
+    version: 31.0.4(@types/node@20.4.2)(ts-node@10.9.1)
   vite:
     specifier: 4.4.4
     version: 4.4.4(@types/node@20.4.2)
@@ -2778,7 +2790,7 @@ packages:
       json-parse-even-better-errors: 2.3.1
     dev: true
 
-  /@pandacss/astro@0.7.0(astro@2.8.5)(typescript@5.1.6):
+  /@pandacss/astro@0.7.0(astro@2.8.5)(ts-node@10.9.1)(typescript@5.1.6):
     resolution: {integrity: sha512-1/bJpWKw32Dw9hxMN3h9cQZX10MebKnXm4uIxw6fvRgWCXd0F/FTCB4bePD9PkozAc3IFx9A6MDngz4/tnK6ZA==}
     peerDependencies:
       astro: '>=2.x'
@@ -2787,7 +2799,7 @@ packages:
       astro: 2.8.5(@types/node@20.4.2)
       autoprefixer: 10.4.14(postcss@8.4.26)
       postcss: 8.4.26
-      postcss-load-config: 4.0.1(postcss@8.4.26)
+      postcss-load-config: 4.0.1(postcss@8.4.26)(ts-node@10.9.1)
     transitivePeerDependencies:
       - jsdom
       - ts-node
@@ -2830,7 +2842,7 @@ packages:
       ts-pattern: 5.0.1
     dev: true
 
-  /@pandacss/dev@0.7.0(@internationalized/date@3.3.0)(@types/node@20.4.2)(@types/react-dom@18.2.7)(@types/react@18.2.15)(astro@2.8.5)(typescript@5.1.6):
+  /@pandacss/dev@0.7.0(@internationalized/date@3.3.0)(@types/node@20.4.2)(@types/react-dom@18.2.7)(@types/react@18.2.15)(astro@2.8.5)(ts-node@10.9.1)(typescript@5.1.6):
     resolution: {integrity: sha512-FST+ttrGdCapp8frGf/otOAa+MmYbvxsVQqtwThZe2OwzACcGRKrYeDXF5hT2XV1DLE299DM8YuD3kxg8bA7QQ==}
     hasBin: true
     peerDependencies:
@@ -2839,7 +2851,7 @@ packages:
       astro:
         optional: true
     dependencies:
-      '@pandacss/astro': 0.7.0(astro@2.8.5)(typescript@5.1.6)
+      '@pandacss/astro': 0.7.0(astro@2.8.5)(ts-node@10.9.1)(typescript@5.1.6)
       '@pandacss/config': 0.7.0
       '@pandacss/error': 0.7.0
       '@pandacss/logger': 0.7.0
@@ -3057,6 +3069,11 @@ packages:
       tslib: 2.6.0
     dev: true
 
+  /@planetscale/database@1.8.0:
+    resolution: {integrity: sha512-+zk04eXRiaJGaRnJZkCxXbBtBvQDQJXCoxqlXhLY3HzAovXfsBnh6DjXRujPRQQ7GKtT8/tOlyvZ9h6ReM+GLQ==}
+    engines: {node: '>=16'}
+    dev: true
+
   /@playwright/test@1.36.1:
     resolution: {integrity: sha512-YK7yGWK0N3C2QInPU6iaf/L3N95dlGdbsezLya4n0ZCh3IL7VgPGxC6Gnznh9ApWdOmkJeleT2kMTcWPRZvzqg==}
     engines: {node: '>=16'}
@@ -3177,6 +3194,16 @@ packages:
     dependencies:
       tslib: 2.6.0
     dev: true
+
+  /@swup/gtm-plugin@1.0.2:
+    resolution: {integrity: sha512-HwzS0maX4q/HaU1M0EjFbsSy9qUc8RB6D6+nvGrowcM8KXbVovzlKgJs4PqigXiMZzSSPp9X+HSsqDWL5yJfJQ==}
+    dependencies:
+      '@swup/plugin': 0.1.2
+    dev: false
+
+  /@swup/plugin@0.1.2:
+    resolution: {integrity: sha512-PpColpr1tepKYLQx0HN11PPr+yHo2/PjiXOkcRLmntNq2igUBwUqwerkXjDXn5IZysutg+HiQfUP8ZElGUneJA==}
+    dev: false
 
   /@szmarczak/http-timer@4.0.6:
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
@@ -3603,10 +3630,10 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/remix-builder@1.8.18(@types/node@20.4.2):
+  /@vercel/remix-builder@1.8.18(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-GYIFBe+z3/AuPHhXcpKtMLDj+1LrgcfE3HKka9RuUbfLOcJbfwdFODWHV7c7D5zgEu/KTIGEO6dOJp8GQmPzng==}
     dependencies:
-      '@remix-run/dev': /@vercel/remix-run-dev@1.18.1(@types/node@20.4.2)
+      '@remix-run/dev': /@vercel/remix-run-dev@1.18.1(@types/node@20.4.2)(ts-node@10.9.1)
       '@vercel/build-utils': 6.8.2
       '@vercel/nft': 0.22.5
       '@vercel/static-config': 2.0.17
@@ -3630,7 +3657,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@vercel/remix-run-dev@1.18.1(@types/node@20.4.2):
+  /@vercel/remix-run-dev@1.18.1(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-V9RCT+3VDB0wLbwq8Dp0XO6Cc1LxY4tCyxJ5loyX0L8sPBCgQ3/vMre3VKr8jLhjnfUGSrbXADxFM8/bq4ZeDQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -3679,7 +3706,7 @@ packages:
       pidtree: 0.6.0
       postcss: 8.4.26
       postcss-discard-duplicates: 5.1.0(postcss@8.4.26)
-      postcss-load-config: 4.0.1(postcss@8.4.26)
+      postcss-load-config: 4.0.1(postcss@8.4.26)(ts-node@10.9.1)
       postcss-modules: 6.0.0(postcss@8.4.26)
       prettier: 2.8.8
       pretty-ms: 7.0.1
@@ -5041,6 +5068,7 @@ packages:
     engines: {node: '>=10.16.0'}
     dependencies:
       streamsearch: 1.1.0
+    dev: true
 
   /bytes@3.1.2:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
@@ -5500,6 +5528,13 @@ packages:
   /data-uri-to-buffer@3.0.1:
     resolution: {integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==}
     engines: {node: '>= 6'}
+    dev: true
+
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.22.6
     dev: true
 
   /deasync@0.1.28:
@@ -7771,6 +7806,22 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
+  /kysely-planetscale@1.3.0(@planetscale/database@1.8.0)(kysely@0.26.1):
+    resolution: {integrity: sha512-lAldOF+Yg2raVvRfyXjBqlZ63ONpNZRpfWUK9WrtEdVUIYJxOhbgzihYaRtb4lHVFNyAZyuSCvatEsK7hszcJg==}
+    peerDependencies:
+      '@planetscale/database': '*'
+      kysely: '*'
+    dependencies:
+      '@planetscale/database': 1.8.0
+      date-fns: 2.30.0
+      kysely: 0.26.1
+    dev: true
+
+  /kysely@0.26.1:
+    resolution: {integrity: sha512-FVRomkdZofBu3O8SiwAOXrwbhPZZr8mBN5ZeUWyprH29jzvy6Inzqbd0IMmGxpd4rcOCL9HyyBNWBa8FBqDAdg==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
   /levn@0.3.0:
     resolution: {integrity: sha512-0OO4y2iOHix2W6ujICbKIaEQXvFQHue65vUG3pb5EUomzPI90z9hsA1VsO/dbIIpC53J8gxM9Q4Oho0jrCM/yA==}
     engines: {node: '>= 0.8.0'}
@@ -9560,7 +9611,7 @@ packages:
       postcss: 8.4.26
     dev: true
 
-  /postcss-load-config@4.0.1(postcss@8.4.26):
+  /postcss-load-config@4.0.1(postcss@8.4.26)(ts-node@10.9.1):
     resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
     engines: {node: '>= 14'}
     peerDependencies:
@@ -9574,6 +9625,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.26
+      ts-node: 10.9.1(@types/node@20.4.2)(typescript@5.1.6)
       yaml: 2.3.1
     dev: true
 
@@ -10785,6 +10837,7 @@ packages:
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
+    dev: true
 
   /streamx@2.15.0:
     resolution: {integrity: sha512-HcxY6ncGjjklGs1xsP1aR71INYcsXFJet5CU1CHqihQ2J5nOsbd4OjgjHO42w/4QNv9gZb3BueV+Vxok5pLEXg==}
@@ -11177,6 +11230,37 @@ packages:
       yn: 3.1.1
     dev: true
 
+  /ts-node@10.9.1(@types/node@20.4.2)(typescript@5.1.6):
+    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.9
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.4.2
+      acorn: 8.10.0
+      acorn-walk: 8.2.0
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 5.1.6
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    dev: true
+
   /ts-pattern@5.0.1:
     resolution: {integrity: sha512-ZyNm28Lsg34Co5DS3e9DVyjlX2Y+2exkI4jqTKyU+9/OL6Y2fKOOuL8i+7no71o74C6mVS+UFoP3ekM3iCT1HQ==}
     dev: true
@@ -11347,6 +11431,7 @@ packages:
     engines: {node: '>=14.0'}
     dependencies:
       busboy: 1.6.0
+    dev: true
 
   /unherit@3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
@@ -11534,7 +11619,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vercel@31.0.4(@types/node@20.4.2):
+  /vercel@31.0.4(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-KO2r6he/KtCWg7mgdiGVJefe6Y369yfne794/K3mzFjJZo8A1lEt6vB5yy2a79G4SX8VY7JfT2DvfsAlhIb7vQ==}
     engines: {node: '>= 14'}
     hasBin: true
@@ -11546,7 +11631,7 @@ packages:
       '@vercel/node': 2.15.6
       '@vercel/python': 3.1.60
       '@vercel/redwood': 1.1.15
-      '@vercel/remix-builder': 1.8.18(@types/node@20.4.2)
+      '@vercel/remix-builder': 1.8.18(@types/node@20.4.2)(ts-node@10.9.1)
       '@vercel/ruby': 1.3.76
       '@vercel/static-build': 1.3.41
     transitivePeerDependencies:
