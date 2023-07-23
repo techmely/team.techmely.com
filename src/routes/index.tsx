@@ -7,11 +7,12 @@ export default component$(() => {
 })
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'TechMel - ',
   meta: [
     {
       name: 'description',
       content: 'Qwik site description',
     },
   ],
+  links: [],
 }

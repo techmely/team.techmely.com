@@ -6,15 +6,7 @@ import Footer from 'components/starter/footer/footer'
 import Header from 'components/starter/header/header'
 import { MAX_AGE_TIME, SWR_TIME } from 'libs/cache'
 
-export const onGet: RequestHandler = async ({ cacheControl, env }) => {
-  async function getDbClient() {
-    try {
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  getDbClient()
+export const onGet: RequestHandler = async ({ cacheControl }) => {
   cacheControl({
     staleWhileRevalidate: SWR_TIME,
     maxAge: MAX_AGE_TIME,
