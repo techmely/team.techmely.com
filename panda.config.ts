@@ -10,6 +10,21 @@ export default defineConfig({
 
   // Files to exclude
   exclude: [],
+  utilities: {
+    extend: {
+      mwInline: {
+        className: 'mw-inline',
+        values: { type: 'number' },
+        transform(value: string) {
+          console.log('transform  👻  value:', value)
+          if (!value || !+value) return {}
+          return {
+            marginInline: `max(0px, 50% - ${value}px / 2)`,
+          }
+        },
+      },
+    },
+  },
 
   // Useful for theme customization
   theme: {
