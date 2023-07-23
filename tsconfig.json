@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "allowJs": true,
     "target": "ES2017",
     "module": "ES2022",
@@ -16,10 +17,7 @@
     "isolatedModules": true,
     "outDir": "tmp",
     "noEmit": true,
-    "types": ["node", "vite/client"],
-    "paths": {
-      "~/*": ["./src/*"]
-    }
+    "types": ["node", "vite/client"]
   },
   "include": ["src", "./*.d.ts", "./*.config.ts"]
 }
