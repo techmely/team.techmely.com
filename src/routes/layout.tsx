@@ -1,4 +1,4 @@
-import { component$, Slot } from '@builder.io/qwik'
+import { Slot, component$ } from '@builder.io/qwik'
 import type { RequestHandler } from '@builder.io/qwik-city'
 import { routeLoader$ } from '@builder.io/qwik-city'
 
@@ -6,7 +6,15 @@ import Footer from 'components/starter/footer/footer'
 import Header from 'components/starter/header/header'
 import { MAX_AGE_TIME, SWR_TIME } from 'libs/cache'
 
-export const onGet: RequestHandler = async ({ cacheControl }) => {
+export const onGet: RequestHandler = async ({ cacheControl, env }) => {
+  async function getDbClient() {
+    try {
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  getDbClient()
   cacheControl({
     staleWhileRevalidate: SWR_TIME,
     maxAge: MAX_AGE_TIME,
