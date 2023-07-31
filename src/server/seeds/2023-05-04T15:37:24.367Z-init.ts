@@ -8,6 +8,7 @@ const tables = {
   courses: 'courses',
   products: 'products',
   services: 'services',
+  tags: 'tags',
   memberMetadata: 'member_metadata',
 }
 
@@ -29,8 +30,8 @@ export async function up(db: Kysely<AppDatabase>) {
     .createTable(tables.memberMetadata)
     .ifNotExists()
     .addColumn('id', 'int4', (col) => col.primaryKey().autoIncrement())
-
-    .addColumn('order', 'int4', (col) => col.notNull())
+    .addColumn('member_id', 'int4', (col) => col.notNull().references('members.id'))
+    .addColumn('meta', 'jsonb', (col) => col.notNull())
     .$call(withTimestamps)
     .$call(withMySqlV8)
     .execute()
