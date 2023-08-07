@@ -16,9 +16,7 @@ export default defineConfig(() => {
       qwikVite(),
       ViteTsconfigPaths(),
       partytownVite({ dest: join(__dirname, 'dist', '~partytown') }),
-      ViteLightningCss({
-        browserslist: '2 latest version',
-      }),
+      ViteLightningCss(),
     ],
     preview: {
       headers: {
