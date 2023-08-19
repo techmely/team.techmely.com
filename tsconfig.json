@@ -19,5 +19,5 @@
     "noEmit": true,
     "types": ["node", "vite/client"]
   },
-  "include": ["src", "./*.d.ts", "./*.config.ts"]
+  "include": ["src", "./*.d.ts", "./*.config.ts", "migrations/2023-05-04T15:37:24.367Z-init.ts"]
 }

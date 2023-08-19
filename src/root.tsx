@@ -1,9 +1,9 @@
-import { component$ } from '@builder.io/qwik'
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city'
-import { RouterHead } from 'components/router-head/router-head'
+import { component$ } from "@builder.io/qwik";
+import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
+import { RouterHead } from "components/router-head/router-head";
 
-import './styles/global.css'
-import { ScriptPartytown } from 'components/partytown/partytown'
+import "@techmely/reset-css";
+import { ScriptPartytown } from "components/partytown/partytown";
 
 export default component$(() => {
   return (
@@ -19,5 +19,5 @@ export default component$(() => {
         <RouterOutlet />
       </body>
     </QwikCityProvider>
-  )
-})
+  );
+});
