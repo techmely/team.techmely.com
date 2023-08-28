@@ -43,7 +43,4 @@ lerna-debug.log*
 # Vercel
 .vercel
 
-# Panda CSS
-src/styled-system
-
 .env

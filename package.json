@@ -16,7 +16,6 @@
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
-    "prebuild.pandacss": "panda codegen --silent",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
     "test.e2e": "playwright test",
@@ -27,35 +26,33 @@
     "migration-down": "bun scripts/migrate-db.ts dev down"
   },
   "dependencies": {
-    "@planetscale/database": "1.10.0",
+    "@planetscale/database": "1.11.0",
     "@swup/gtm-plugin": "2.0.0",
     "@techmely/reset-css": "^1.0.0",
-    "@techmely/utils": "1.7.0",
+    "@techmely/utils": "1.8.0",
     "gsap": "3.12.2",
-    "kysely": "0.26.1",
+    "kysely": "0.26.3",
     "kysely-planetscale": "1.4.0",
-    "swup": "4.3.1",
-    "valibot": "0.12.0"
+    "swup": "4.3.4",
+    "valibot": "0.13.1"
   },
   "devDependencies": {
-    "@builder.io/partytown": "^0.8.0",
-    "@builder.io/qwik": "1.2.7",
-    "@builder.io/qwik-city": "1.2.7",
-    "@builder.io/vite-plugin-macro": "0.0.7",
-    "@pandacss/dev": "0.11.1",
+    "@builder.io/partytown": "0.8.0",
+    "@builder.io/qwik": "1.2.10",
+    "@builder.io/qwik-city": "1.2.10",
     "@playwright/test": "^1.36.2",
     "@types/node": "^20.4.8",
-    "autoprefixer": "^10.4.14",
     "dotenv": "16.3.1",
     "kysely-codegen": "0.10.1",
-    "postcss": "8.4.28",
-    "postcss-preset-env": "9.1.1",
     "rome": "12.1.3",
-    "typescript": "5.1.6",
-    "vercel": "31.4.0",
+    "typescript": "5.2.2",
+    "vercel": "32.1.0",
     "vite": "4.4.9",
     "vite-plugin-lightningcss": "0.0.5",
     "vite-tsconfig-paths": "4.2.0",
-    "vitest": "0.34.2"
+    "vitest": "0.34.3",
+    "unocss": "0.55.3",
+    "unocss-preset-scrollbar": "0.2.1",
+    "@unocss/vite": "0.55.3"
   }
 }
