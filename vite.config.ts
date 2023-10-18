@@ -1,9 +1,8 @@
-import { defineConfig } from "vite";
-import { qwikVite } from "@builder.io/qwik/optimizer";
-import { qwikCity } from "@builder.io/qwik-city/vite";
-import ViteTsconfigPaths from "vite-tsconfig-paths";
 import { partytownVite } from "@builder.io/partytown/utils";
-import ViteLightningCss from "vite-plugin-lightningcss";
+import { qwikCity } from "@builder.io/qwik-city/vite";
+import { qwikVite } from "@builder.io/qwik/optimizer";
+import { defineConfig } from "vite";
+import ViteTsconfigPaths from "vite-tsconfig-paths";
 
 import { join } from "path";
 
@@ -14,7 +13,6 @@ export default defineConfig(() => {
       qwikVite(),
       ViteTsconfigPaths(),
       partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
-      ViteLightningCss(),
     ],
     preview: {
       headers: {

@@ -1,18 +1,17 @@
-import { component$ } from '@builder.io/qwik'
-import type { DocumentHead } from '@builder.io/qwik-city'
-import { css } from 'styled-system/css'
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  return <main class={css({ mwInline: 1120 })}>Hello</main>
-})
+  return <main>Hello</main>;
+});
 
 export const head: DocumentHead = {
-  title: 'TechMel - ',
+  title: "TechMel - ",
   meta: [
     {
-      name: 'description',
-      content: 'Qwik site description',
+      name: "description",
+      content: "Qwik site description",
     },
   ],
   links: [],
-}
+};
